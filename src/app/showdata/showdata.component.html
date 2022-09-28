@@ -1,0 +1,45 @@
+<h2>USERS</h2>
+<!-- Background image -->
+<div
+class="p-5 text-center bg-image"
+style="
+  background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/002.webp');
+  height: 400px;
+"
+>
+<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white">
+      <div>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userData">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.password}}</td>
+                <td><button type="button" class="btn btn-success" (click)="updateUser(user.id)">Update</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+<div><button type="button" class="btn btn-danger" (click)="deleteAllUser()">Delete All</button></div>
+<small id="delbtn" class="form-text text-muted">Delete all users with caution as It will be deleted permanently.</small>
+</div>
+
